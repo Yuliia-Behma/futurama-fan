@@ -2,15 +2,13 @@
   <div class="navigation-container">
     <div class="logo-box">
       <img src="~@/assets/img/leading-icon.svg" alt="logo" />
-      <h2>Футурама фан</h2>
+      <h2><a href="#header">Футурама фан</a></h2>
     </div>
     <nav class="navigation">
-      <ul>
-        <li>Трейлери</li>
-        <li>Галерея</li>
-        <li>Акторський склад</li>
-        <li>Сезони</li>
-      </ul>
+      <a href="#">Трейлери</a>
+      <a href="#">Галерея</a>
+      <a href="#">Акторський склад</a>
+      <a href="#">Сезони</a>
     </nav>
     <div class="icon-box">
       <svg
@@ -104,7 +102,10 @@ body {
   flex-direction: row;
   align-items: center;
 }
-.logo-box > h2 {
+.logo-box > h2{
+  margin: 0;
+}
+.logo-box > h2 a {
   margin: 0 0 0 8px;
   color: #a4cafe;
   font-family: futurama-bold;
@@ -119,8 +120,7 @@ body {
   display: flex;
   align-items: center;
 }
-.navigation > ul {
-  list-style: none;
+.navigation {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -128,7 +128,7 @@ body {
   margin: 0;
 }
 
-.navigation > ul li {
+.navigation a {
   padding: 10px 16px;
   text-wrap: nowrap;
   color: #3f83f8;
@@ -139,16 +139,24 @@ body {
   letter-spacing: 0.08em;
 }
 
-.icon-box{
+.navigation a:hover {
+  color: #a4cafe;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.icon-box {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.icon-box>svg:first-of-type{
+.icon-box > svg:first-of-type {
   margin-right: 16px;
 }
-.icon-box>svg:last-of-type{
+.icon-box > svg:last-of-type {
   margin: 8px;
 }
 
+a {
+  text-decoration: none;
+}
 </style>
