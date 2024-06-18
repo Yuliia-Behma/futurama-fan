@@ -6,6 +6,7 @@
     <button class="adventure-btn" data-augmented-ui="tl-clip br-clip">
       Пригоди чекають
     </button>
+    <img class="bottom-decor" src="../assets/img/header-bottom-decoration.png" alt="decoration">
   </div>
 </template>
 
@@ -73,5 +74,11 @@
   filter: drop-shadow(4px 4px 0 #000);
   -webkit-text-stroke: 1.5px #fee472;
   font-size: 96px;
+}
+
+.bottom-decor{
+width: 100%;
+position: absolute;
+bottom: 0;
 }
 </style>
