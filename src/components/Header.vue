@@ -36,12 +36,21 @@
   background-color: #e3a008;
   color: #0c1b43;
   font-family: futurama-bold;
-  /* font-family: Futurama Bold Font(RUS BY LYAJK; */
   font-size: 18px;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: 8%;
   text-align: center;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+}
+.adventure-btn:hover{
+    background-color: #FACA15;
+    color: #633112;
+}
+
+.adventure-btn:active{
+    background-color: #C27803;
+    color: #FFFFFF;
 }
 
 .main-heading {

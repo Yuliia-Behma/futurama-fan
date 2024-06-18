@@ -1,7 +1,7 @@
 <template>
   <div class="navigation-container">
     <div class="logo-box">
-      <img src="~@/assets/img/Logo-Futurama.svg" alt="logo">
+      <img src="~@/assets/img/leading-icon.svg" alt="logo">
       <h2>Футурама фан</h2>
     </div>
     <nav></nav>
@@ -54,9 +54,10 @@ body{
 .logo-box{
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 .logo-box > h2{
-  margin: 0;
+  margin: 0 0 0 8px;
   color: #A4CAFE;
 font-family: futurama-bold;
 font-size: 24px;
