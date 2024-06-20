@@ -71,6 +71,8 @@ export default {
 </script>
 
 <style>
+/* Fonts */
+
 @font-face {
   font-family: futurama-bold;
   src: url("~@/assets/fonts/Futurama Bold Font.ttf");

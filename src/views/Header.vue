@@ -4,7 +4,7 @@
   <div class="header-container">
     <h1 class="main-heading">Футурама</h1>
     <button class="adventure-btn" data-augmented-ui="tl-clip br-clip">
-      Пригоди чекають
+       <a href="#introduction">Пригоди чекають</a>
     </button>
     <img
       class="bottom-decor"
@@ -39,21 +39,39 @@
   height: 64px;
   border: none;
   background-color: #e3a008;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.adventure-btn>a{
+  display: block;
+  text-decoration: none;
   color: #0c1b43;
+  width: 100%;
+  height: 100%;
   font-family: futurama-bold;
   font-size: 18px;
   font-weight: 700;
-  line-height: 150%;
+  line-height: 62px;
   letter-spacing: 8%;
   text-align: center;
   transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
+
 .adventure-btn:hover {
   background-color: #faca15;
   color: #633112;
 }
 
+.adventure-btn>a:hover{
+  background-color: #faca15;
+  color: #633112;
+}
+
 .adventure-btn:active {
+  background-color: #c27803;
+  color: #ffffff;
+}
+.adventure-btn>a:active{
   background-color: #c27803;
   color: #ffffff;
 }
