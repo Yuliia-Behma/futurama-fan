@@ -6,7 +6,11 @@
     <button class="adventure-btn" data-augmented-ui="tl-clip br-clip">
       Пригоди чекають
     </button>
-    <img class="bottom-decor" src="../assets/img/header-bottom-decoration.png" alt="decoration">
+    <img
+      class="bottom-decor"
+      src="../assets/img/header-bottom-decoration.png"
+      alt="decoration"
+    />
   </div>
 </template>
 
@@ -42,16 +46,16 @@
   line-height: 150%;
   letter-spacing: 8%;
   text-align: center;
-  transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
-.adventure-btn:hover{
-    background-color: #FACA15;
-    color: #633112;
+.adventure-btn:hover {
+  background-color: #faca15;
+  color: #633112;
 }
 
-.adventure-btn:active{
-    background-color: #C27803;
-    color: #FFFFFF;
+.adventure-btn:active {
+  background-color: #c27803;
+  color: #ffffff;
 }
 
 .main-heading {
@@ -76,9 +80,9 @@
   font-size: 96px;
 }
 
-.bottom-decor{
-width: 100%;
-position: absolute;
-bottom: 0;
+.bottom-decor {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
 }
 </style>

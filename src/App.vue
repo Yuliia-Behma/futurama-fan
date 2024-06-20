@@ -54,15 +54,18 @@
     </div>
   </div>
   <Header id="header"></Header>
+  <Introduction id="introduction"></Introduction>
 </template>
 
 <script>
-import Header from "./components/Header.vue";
+import Header from "./views/Header.vue";
+import Introduction from "./views/Introduction.vue";
 
 export default {
   name: "App",
   components: {
     Header,
+    Introduction,
   },
 };
 </script>
@@ -81,12 +84,50 @@ export default {
   src: url("~@/assets/fonts/Futurama Title Font.ttf");
 }
 
+@font-face {
+  font-family: Montserrat;
+  src: url("~@/assets/fonts/Montserrat-Regular.ttf");
+}
+/* General styles */
+.first-wraper{
+  max-width: 1128px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.left-side-icon{
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 240px;
+  height: 240px;
+}
+
+.heading-block{
+  display: flex;
+  flex-direction: row;
+  margin-top: 72px;
+}
+
+.heading-block img{
+  width: 56px;
+  height: 56px;
+}
+
+.heading-block h2{
+  font-family: futurama-bold;
+  font-weight: 700;
+  font-size: 48px;
+  color: #C3DDFD;
+  margin: 0;
+}
+
 body {
   background-color: #1e1e1e;
   margin: 0;
   width: 100%;
 }
-
+/* ------------------- */
 .navigation-container {
   position: fixed;
   top: 0;
