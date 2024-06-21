@@ -20,8 +20,8 @@ div .augmented-div {
 
   --aug-border-all: 2px;
   --aug-border-bg: #1e429f;
-  --aug-br-extend2: 430px;
-  --aug-br1: 40px;
+  --aug-br-extend2: 400px;
+  --aug-br1: 30px;
   --aug-br2: 10px;
   --aug-bl: 10px;
 }

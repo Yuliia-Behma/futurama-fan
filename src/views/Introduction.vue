@@ -109,7 +109,7 @@ import PhotoCard from "@/components/PhotoCard.vue";
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 82px;
+  margin-bottom: 10px;
 }
 
 a {
