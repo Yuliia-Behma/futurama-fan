@@ -1,6 +1,16 @@
 <script setup>
 import InfoCard from "@/components/InfoCard.vue";
 import PhotoCard from "@/components/PhotoCard.vue";
+import data from "@/assets/data/characters.json";
+import { onMounted, ref } from "vue";
+
+const firstCharacters = ref([]);
+onMounted(() => {
+  for (let i = 0; i < 2; i++) {
+    firstCharacters.value.push(data.characters[i]);
+    console.log(data.characters[i]);
+  }
+});
 </script>
 
 <template>
@@ -15,8 +25,29 @@ import PhotoCard from "@/components/PhotoCard.vue";
       <h2>Знайомство</h2>
     </div>
     <div class="character-wraper">
-      <div class="character-block">
+      <div
+        v-for="character in firstCharacters"
+        :key="character.name"
+        class="character-block"
+      >
         <InfoCard>
+          <template v-slot:heading>
+            <h4 class="slot-heading">{{ character.name }}</h4>
+          </template>
+          <template v-slot:parag>
+            <p class="slot-parag">
+              {{ character.descriptions }}
+            </p>
+          </template>
+        </InfoCard>
+        <PhotoCard>
+          <img
+            class="slot-photo-fry"
+            :src="require(`../assets/img/Characters/${character.picture}`)"
+            :alt="character.name"
+          />
+        </PhotoCard>
+        <!-- <InfoCard>
           <template v-slot:heading>
             <h4 class="slot-heading">Філіп Джей Фрай</h4>
           </template>
@@ -35,9 +66,9 @@ import PhotoCard from "@/components/PhotoCard.vue";
             src="../assets/img/Characters/Character_Fry.png"
             alt="fry"
           />
-        </PhotoCard>
+        </PhotoCard> -->
       </div>
-      <div class="character-block">
+      <!-- <div class="character-block">
         <PhotoCard>
           <img
             class="slot-photo-leela"
@@ -57,7 +88,7 @@ import PhotoCard from "@/components/PhotoCard.vue";
             </p>
           </template>
         </InfoCard>
-      </div>
+      </div> -->
     </div>
     <div class="link-div">
       <a href="#">Усі головні персонажі ></a>
@@ -101,11 +132,11 @@ import PhotoCard from "@/components/PhotoCard.vue";
 .slot-photo-fry {
   width: 73%;
 }
-.slot-photo-leela{
+.slot-photo-leela {
   width: 100%;
 }
 
-.link-div{
+.link-div {
   display: flex;
   justify-content: center;
   align-items: center;

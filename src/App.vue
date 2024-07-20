@@ -28,8 +28,11 @@
       </svg>
     </div>
   </div>
-  <Header id="header"></Header>
-  <Introduction id="introduction"></Introduction>
+    <Header id="header"></Header>
+  <main>
+    <Introduction id="introduction"></Introduction>
+  </main>
+  
 </template>
 
 <script>
