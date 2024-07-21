@@ -64,3 +64,39 @@ body {
   margin: 0;
   width: 100%;
 }
+
+/* TABS */
+
+.tabs-component-tabs{
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    gap: 16px;
+}
+
+.tabs-component-tab-a{
+    text-decoration: none;
+    color: #9CA3AF;
+    font-family: futura-medium;
+    font-size: 20px;
+    padding: 12px 24px;
+}
+
+.tabs-component-tab-a:hover{
+    background-color: #101f49;
+    color: #C3DDFD;
+}
+
+.tabs-component-tab .is-active{
+    text-transform: uppercase;
+    color: #3F83F8;
+    border-bottom: 2px solid #1C64F2;
+    background-color: #0D1422;
+}
+
+.tabs-component-tab .is-active:hover{
+    background-color: #101f49;
+    color: #c3ddfd;
+    border-bottom: 2px solid #3f83f8;
+    
+}
