@@ -1,1 +1,66 @@
-@import '~augmented-ui/augmented-ui.css';
+@import "~augmented-ui/augmented-ui.css";
+
+@font-face {
+  font-family: futurama-bold;
+  src: url("~@/assets/fonts/Futurama Bold Font.ttf");
+}
+@font-face {
+  font-family: futura-medium;
+  src: url("~@/assets/fonts/Futura-font-Medium-Cyrillic.otf");
+}
+@font-face {
+  font-family: futurama-title;
+  src: url("~@/assets/fonts/Futurama Title Font.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("~@/assets/fonts/Montserrat-Regular.ttf");
+}
+
+.first-wraper {
+  max-width: 1128px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.left-side-icon {
+  position: absolute;
+  top: 0;
+  left: -320px;
+  width: 240px;
+  height: 240px;
+}
+
+.right-side-icon {
+  position: absolute;
+  top: 0;
+  right: -320px;
+  width: 240px;
+  height: 240px;
+}
+
+.heading-block {
+  display: flex;
+  flex-direction: row;
+  margin-top: 72px;
+}
+
+.heading-block img {
+  width: 56px;
+  height: 56px;
+}
+
+.heading-block h2 {
+  font-family: futurama-bold;
+  font-weight: 700;
+  font-size: 48px;
+  color: #c3ddfd;
+  margin: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  margin: 0;
+  width: 100%;
+}

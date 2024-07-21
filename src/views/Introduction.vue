@@ -47,51 +47,10 @@ onMounted(() => {
             :alt="character.name"
           />
         </PhotoCard>
-        <!-- <InfoCard>
-          <template v-slot:heading>
-            <h4 class="slot-heading">Філіп Джей Фрай</h4>
-          </template>
-          <template v-slot:parag>
-            <p class="slot-parag">
-              Відомий як Фрай, народився 14 серпня 1974 року. Заморозив себе в
-              кріогенній камері за кілька секунд до 2000 року. Розморозився
-              наприкінці 2999 року і надалі став кур'єром у компанії
-              «Міжпланетний Експрес».
-            </p>
-          </template>
-        </InfoCard>
-        <PhotoCard>
-          <img
-            class="slot-photo-fry"
-            src="../assets/img/Characters/Character_Fry.png"
-            alt="fry"
-          />
-        </PhotoCard> -->
       </div>
-      <!-- <div class="character-block">
-        <PhotoCard>
-          <img
-            class="slot-photo-leela"
-            src="../assets/img/Characters/Character_Leela.png"
-            alt="leela"
-          />
-        </PhotoCard>
-        <InfoCard>
-          <template v-slot:heading>
-            <h4 class="slot-heading">Туранга Ліла</h4>
-          </template>
-          <template v-slot:parag>
-            <p class="slot-parag">
-              Є капітаном корабля Planet Express, cтверджує, що є єдиним
-              представником інопланетної раси на Землі, але насправді Ліла
-              мутант, якого в самому ранньому дитинстві підкинули в у притулок.
-            </p>
-          </template>
-        </InfoCard>
-      </div> -->
     </div>
     <div class="link-div">
-      <a href="#">Усі головні персонажі ></a>
+      <a href="#gallery">Усі головні персонажі ></a>
     </div>
   </div>
 </template>
@@ -103,6 +62,10 @@ onMounted(() => {
   gap: 32px;
   margin-top: 24px;
   margin-bottom: 42px;
+}
+
+.character-block:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 .character-block {
