@@ -2,13 +2,8 @@
 import GalleryCharacterCard from "@/components/GalleryCharacterCard.vue";
 import data from "../assets/data/characters.json";
 
-const fry = data.characters[0];
-const leela = data.characters[1];
-const bender = data.characters[2];
-const emy = data.characters[3];
-const professor = data.characters[4];
-const hermes = data.characters[5];
-const zoidberg = data.characters[6];
+const [fry, leela, bender, emy, professor, hermes, zoidberg] = data.characters;
+
 </script>
 
 <template>
