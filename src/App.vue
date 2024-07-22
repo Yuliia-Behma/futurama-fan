@@ -7,7 +7,7 @@
     <nav class="navigation">
       <a href="#">Персонажі</a>
       <a href="#">Трейлери</a>
-      <a href="#">Галерея</a>
+      <a href="#gallery">Галерея</a>
       <a href="#">Актори</a>
       <a href="#">Сезони</a>
     </nav>
