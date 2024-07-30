@@ -87,6 +87,11 @@ body {
     color: #C3DDFD;
 }
 
+.tabs-component-tab-a:active{
+  background-color: #1c64f2;
+  color: #fff;
+}
+
 .tabs-component-tab .is-active{
     text-transform: uppercase;
     color: #3F83F8;
@@ -99,6 +104,12 @@ body {
     color: #c3ddfd;
     border-bottom: 2px solid #3f83f8;
     
+}
+
+.tabs-component-tab .is-active:active{
+  background-color: #1c64f2;
+  border-bottom: 2px solid #c3ddfd;
+  color: #fff;
 }
 
 .tabs-component-panels{

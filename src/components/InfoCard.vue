@@ -11,7 +11,7 @@
 <style scoped>
 div .augmented-div {
   width: 552px;
-  height: 339px;
+  height: 364px;
   padding: 24px 24px 31px;
   display: flex;
   flex-direction: column;

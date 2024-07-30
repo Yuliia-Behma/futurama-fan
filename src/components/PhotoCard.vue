@@ -9,7 +9,7 @@
 <style scoped>
 .augmented-photo {
   width: 456px;
-  height: 339px;
+  height: 350px;
   box-sizing: border-box;
   background-color: #233876;
   overflow: hidden;
