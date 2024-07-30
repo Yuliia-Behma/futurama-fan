@@ -28,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #0C1B43;
+  color: #0c1b43;
 }
 
 .btn:hover {
@@ -39,13 +39,10 @@
   color: white;
 }
 
-/* svg{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
-
-/* svg{
-    transform: rotateY(180deg);
-} */
+.btn[disabled] {
+  border: 1px solid #1e429f;
+  color: #1e429f;
+  background-color: #111928;
+  cursor: not-allowed;
+}
 </style>
