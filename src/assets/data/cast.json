@@ -4,31 +4,36 @@
             "actorsName": "Біллі Вест",
             "charactersName": "Фрай",
             "actorsPhoto": "Billy West_1.jpg",
-            "charactersImg": "Screen_Fry/Fry-HD.png"
+            "charactersImg": "Screen_Fry/Fry-HD.png",
+            "fontColor": "#fdba8c"
         },
         {
             "actorsName": "Кейті Сагал",
             "charactersName": "Ліла",
             "actorsPhoto": "Katey Sagal_2.jpg",
-            "charactersImg": "Screen_Leela/Leela-HD.png"
+            "charactersImg": "Screen_Leela/Leela-HD.png",
+            "fontColor": "#AC94FA"
         },
         {
             "actorsName": "Джон ДіМаггіо",
             "charactersName": "Бендер",
             "actorsPhoto": "John DiMaggio-2.jpg",
-            "charactersImg": "Screen_Bender/Bender-HD.png"
+            "charactersImg": "Screen_Bender/Bender-HD.png",
+            "fontColor": "#9CA3AF"
         },
         {
             "actorsName": "Лаурен Том",
             "charactersName": "Емі",
             "actorsPhoto": "Lauren Tom_5.jpg",
-            "charactersImg": "Screen_Emy/Emy-HD.png"
+            "charactersImg": "Screen_Emy/Emy-HD.png",
+            "fontColor": "#F8B4D9"
         },
         {
             "actorsName": "Філл ЛаМарр",
             "charactersName": "Гермес",
             "actorsPhoto": "Phil LaMarr_4.jpg",
-            "charactersImg": "Screen_Hermes/Hermes-HD.png"
+            "charactersImg": "Screen_Hermes/Hermes-HD.png",
+            "fontColor": "#D1D5DB"
         }
     ]
 }

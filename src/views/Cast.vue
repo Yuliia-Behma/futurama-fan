@@ -1,13 +1,20 @@
 <script setup>
 import RoundButton from "@/components/RoundButton.vue";
 import data from "@/assets/data/cast.json";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
+// import { ref } from "vue";
 
 const cast = data.cast;
-const index = ref(0);
+const index = ref(3);
+const fontColor = ref(cast[index.value].fontColor);
 // const isDisabled = ref(false);
 
+const characterNameParag = ref(null);
 
+
+onMounted(() => {
+  characterNameParag.value.style.color = fontColor.value;
+});
 </script>
 
 <template>
@@ -25,25 +32,35 @@ const index = ref(0);
       <img src="../assets/img/left-cast-decor.png" alt="decor" />
       <div class="main">
         <div class="cast-block">
-          
           <div class="content-block">
             <RoundButton class="reverse" disabled></RoundButton>
             <div class="actor">
-              <img src="../assets/img/cast-big-frame.svg" alt="frame">
+              <img src="../assets/img/cast-big-frame.svg" alt="frame" />
               <div class="photo">
-                <img :src="require(`../assets/img/Actors/${cast[index].actorsPhoto}`)" alt="actor's photo">
+                <img
+                  :src="
+                    require(`../assets/img/Actors/${cast[index].actorsPhoto}`)
+                  "
+                  alt="actor's photo"
+                />
               </div>
             </div>
             <RoundButton></RoundButton>
           </div>
           <div class="details">
             <p class="actor-name">{{ cast[index].actorsName }}</p>
-            <p class="characters-name">{{ cast[index].charactersName }}</p>
+            <p ref="characterNameParag" class="characters-name">
+              {{ cast[index].charactersName }}
+            </p>
           </div>
-          
         </div>
         <div class="characters-img">
-          <img :src="require(`../assets/img/Characters/${cast[index].charactersImg}`)" alt="character's image" />
+          <img
+            :src="
+              require(`../assets/img/Characters/${cast[index].charactersImg}`)
+            "
+            alt="character's image"
+          />
         </div>
       </div>
       <img src="../assets/img/right-cast-decor.png" alt="decor" />
@@ -80,20 +97,20 @@ const index = ref(0);
   transform: rotateY(180deg);
 }
 
-.content-block{
+.content-block {
   width: 512px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.actor{
-  width:320px;
+.actor {
+  width: 320px;
   height: 320px;
   position: relative;
 }
 
-.photo{
+.photo {
   position: absolute;
   top: 33px;
   left: 33px;
@@ -109,14 +126,14 @@ const index = ref(0);
   align-items: center;
 }
 
-.photo img{
+.photo img {
   width: 100%;
   position: absolute;
   top: 0;
-  left:0;
+  left: 0;
 }
 
-.characters-img{
+.characters-img {
   height: 514px;
   width: 472px;
   display: flex;
@@ -125,21 +142,20 @@ const index = ref(0);
   margin: auto 0;
 }
 
-.characters-img img{
+.characters-img img {
   height: 514px;
 }
 
-.actor-name{
+.actor-name {
   font-family: futurama-bold;
   font-size: 30px;
   color: #fff;
   margin: 24px 0 12px;
 }
 
-.characters-name{
+.characters-name {
   margin: 0;
   font-family: futura-medium;
   font-size: 26px;
-  color: #fdba8c;
 }
 </style>
