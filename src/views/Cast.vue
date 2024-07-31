@@ -1,5 +1,13 @@
 <script setup>
 import RoundButton from "@/components/RoundButton.vue";
+import data from "@/assets/data/cast.json";
+import { ref } from "vue";
+
+const cast = data.cast;
+const index = ref(0);
+// const isDisabled = ref(false);
+
+
 </script>
 
 <template>
@@ -23,18 +31,20 @@ import RoundButton from "@/components/RoundButton.vue";
             <div class="actor">
               <img src="../assets/img/cast-big-frame.svg" alt="frame">
               <div class="photo">
-                <img src="" alt="">
+                <img :src="require(`../assets/img/Actors/${cast[index].actorsPhoto}`)" alt="actor's photo">
               </div>
             </div>
             <RoundButton></RoundButton>
           </div>
           <div class="details">
-            <p class="actor-name"></p>
-            <p class="characters-name"></p>
+            <p class="actor-name">{{ cast[index].actorsName }}</p>
+            <p class="characters-name">{{ cast[index].charactersName }}</p>
           </div>
           
         </div>
-        <img src="" alt="" />
+        <div class="characters-img">
+          <img :src="require(`../assets/img/Characters/${cast[index].charactersImg}`)" alt="character's image" />
+        </div>
       </div>
       <img src="../assets/img/right-cast-decor.png" alt="decor" />
     </div>
@@ -52,7 +62,7 @@ import RoundButton from "@/components/RoundButton.vue";
 .main {
   flex-grow: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #0c1b43a3;
   height: 100%;
 }
@@ -94,5 +104,42 @@ import RoundButton from "@/components/RoundButton.vue";
   height: 254px;
   padding: 10px;
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo img{
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left:0;
+}
+
+.characters-img{
+  height: 514px;
+  width: 472px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto 0;
+}
+
+.characters-img img{
+  height: 514px;
+}
+
+.actor-name{
+  font-family: futurama-bold;
+  font-size: 30px;
+  color: #fff;
+  margin: 24px 0 12px;
+}
+
+.characters-name{
+  margin: 0;
+  font-family: futura-medium;
+  font-size: 26px;
+  color: #fdba8c;
 }
 </style>
