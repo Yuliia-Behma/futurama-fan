@@ -5,16 +5,44 @@ import { onMounted, ref } from "vue";
 // import { ref } from "vue";
 
 const cast = data.cast;
-const index = ref(3);
-const fontColor = ref(cast[index.value].fontColor);
+const index = ref(0);
+const fontColor = ref("");
 // const isDisabled = ref(false);
 
 const characterNameParag = ref(null);
 
+const refreshColor = () => {
+  fontColor.value = cast[index.value].fontColor;
+  characterNameParag.value.style.color = fontColor.value;
+};
 
 onMounted(() => {
-  characterNameParag.value.style.color = fontColor.value;
+  refreshColor();
 });
+
+const increment = () => {
+  if (index.value < cast.length - 1) {
+    index.value++;
+    refreshColor();
+    console.log(fontColor.value);
+  } else {
+    index.value = 0;
+    refreshColor();
+    console.log(fontColor.value);
+  }
+};
+
+const decrement = () => {
+  if (index.value > 0) {
+    index.value--;
+    refreshColor();
+    console.log(fontColor.value);
+  } else {
+    index.value = cast.length - 1;
+    refreshColor();
+    console.log(fontColor.value);
+  }
+};
 </script>
 
 <template>
@@ -33,7 +61,7 @@ onMounted(() => {
       <div class="main">
         <div class="cast-block">
           <div class="content-block">
-            <RoundButton class="reverse" disabled></RoundButton>
+            <RoundButton class="reverse" @click="decrement"></RoundButton>
             <div class="actor">
               <img src="../assets/img/cast-big-frame.svg" alt="frame" />
               <div class="photo">
@@ -45,7 +73,7 @@ onMounted(() => {
                 />
               </div>
             </div>
-            <RoundButton></RoundButton>
+            <RoundButton @click="increment"></RoundButton>
           </div>
           <div class="details">
             <p class="actor-name">{{ cast[index].actorsName }}</p>
