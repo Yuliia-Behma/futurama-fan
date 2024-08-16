@@ -1,35 +1,35 @@
 {
     "cast":[
         {
-            "actorsName": "Біллі Вест",
+            "actorsName": "Бiллi Вест",
             "charactersName": "Фрай",
             "actorsPhoto": "Billy West_1.jpg",
             "charactersImg": "Screen_Fry/Fry-HD.png",
             "fontColor": "#fdba8c"
         },
         {
-            "actorsName": "Кейті Сагал",
-            "charactersName": "Ліла",
+            "actorsName": "Кейтi Сагал",
+            "charactersName": "Л iла",
             "actorsPhoto": "Katey Sagal_2.jpg",
             "charactersImg": "Screen_Leela/Leela-HD.png",
             "fontColor": "#AC94FA"
         },
         {
-            "actorsName": "Джон ДіМаггіо",
+            "actorsName": "Джон ДiМаггiо",
             "charactersName": "Бендер",
-            "actorsPhoto": "John DiMaggio-2.png",
+            "actorsPhoto": "John DiMaggio-2-1.jpg",
             "charactersImg": "Screen_Bender/Bender-HD.png",
             "fontColor": "#9CA3AF"
         },
         {
             "actorsName": "Лаурен Том",
-            "charactersName": "Емі",
+            "charactersName": "Емi",
             "actorsPhoto": "Lauren Tom_5.jpg",
             "charactersImg": "Screen_Emy/Emy-HD.png",
             "fontColor": "#F8B4D9"
         },
         {
-            "actorsName": "Філл ЛаМарр",
+            "actorsName": "Фiлл ЛаМарр",
             "charactersName": "Гермес",
             "actorsPhoto": "Phil LaMarr_4.jpg",
             "charactersImg": "Screen_Hermes/Hermes-HD.png",

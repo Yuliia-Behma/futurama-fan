@@ -63,7 +63,10 @@ const decrement = () => {
           <div class="content-block">
             <RoundButton class="reverse" @click="decrement"></RoundButton>
             <div class="actor">
-              <img src="../assets/img/cast-big-frame.svg" alt="frame" />
+              <Transition>
+                <img class="transition-img" src="../assets/img/cast-big-frame.svg" alt="frame" />
+              </Transition>
+              
               <div class="photo">
                 <img
                   :src="
@@ -152,6 +155,7 @@ const decrement = () => {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #fff;
 }
 
 .photo img {
@@ -185,5 +189,21 @@ const decrement = () => {
   margin: 0;
   font-family: futura-medium;
   font-size: 26px;
+}
+
+/* Transition */
+
+.transition-img{
+  transform: rotate(calc(+90deg));
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: transform 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  transform: rotate(calc(+30deg));
 }
 </style>
