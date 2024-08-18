@@ -33,6 +33,7 @@
     <Introduction id="introduction"></Introduction>
     <Gallery id="gallery"></Gallery>
     <Cast id="cast"></Cast>
+    <Footer></Footer>
   </main>
 </template>
 
@@ -41,6 +42,7 @@ import Header from "./views/Header.vue";
 import Introduction from "./views/Introduction.vue";
 import Gallery from "./views/Gallery.vue"
 import Cast from "./views/Cast.vue";
+import Footer from "./views/Footer.vue";
 
 export default {
   name: "App",
@@ -48,7 +50,8 @@ export default {
     Header,
     Introduction,
     Gallery,
-    Cast
+    Cast,
+    Footer
   },
 };
 </script>

@@ -30,6 +30,8 @@
   left: -320px;
   width: 240px;
   height: 240px;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
 }
 
 .right-side-icon {
@@ -38,6 +40,8 @@
   right: -320px;
   width: 240px;
   height: 240px;
+  mix-blend-mode: hard-light;
+  opacity: 0.8;
 }
 
 .heading-block {
