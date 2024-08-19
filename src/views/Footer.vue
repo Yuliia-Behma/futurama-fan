@@ -265,7 +265,17 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  margin-bottom: 32px;
+
+}
+
+.logo-container:hover a span{
+    color: #E1EFFE;
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo-container:hover a img{
+    filter: brightness(1.24);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .site-name {
@@ -284,6 +294,7 @@
   display: flex;
   align-items: center;
   gap: 32px;
+  margin-top: 32px;
 }
 
 .nav-links a {
@@ -331,6 +342,11 @@
 
 .bottom-logo {
   width: 80px;
+}
+
+.bottom-logo:hover{
+    filter: brightness(1.24);
+    transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .license p {
