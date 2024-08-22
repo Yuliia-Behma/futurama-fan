@@ -77,7 +77,7 @@ import BlueButton from "@/components/BlueButton.vue";
   --aug-border-all: 2px;
   --aug-border-bg: #1e429f;
   --aug-br-extend2: 958px;
-  --aug-br1: 32px;
+  --aug-br1: 40px;
   --aug-br2: 16px;
   --aug-bl: 16px;
 }
