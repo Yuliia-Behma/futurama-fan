@@ -1,5 +1,5 @@
 <script setup>
-import RoundButton from "@/components/RoundButton.vue";
+import BlueButton from "@/components/BlueButton.vue";
 import data from "@/assets/data/cast.json";
 import { onMounted, ref } from "vue";
 // import { ref } from "vue";
@@ -57,16 +57,20 @@ const decrement = () => {
       <h2>Актори</h2>
     </div>
     <div class="next-wrapper">
-      <img src="../assets/img/left-cast-decor.png" alt="decor" />
+      <img class="decor" src="../assets/img/left-cast-decor.png" alt="decor" />
       <div class="main">
         <div class="cast-block">
           <div class="content-block">
-            <RoundButton class="reverse" @click="decrement"></RoundButton>
+            <BlueButton class="round reverse" @click="decrement"></BlueButton>
             <div class="actor">
               <Transition>
-                <img class="transition-img" src="../assets/img/cast-big-frame.svg" alt="frame" />
+                <img
+                  class="transition-img"
+                  src="../assets/img/cast-big-frame.svg"
+                  alt="frame"
+                />
               </Transition>
-              
+
               <div class="photo">
                 <img
                   :src="
@@ -76,7 +80,7 @@ const decrement = () => {
                 />
               </div>
             </div>
-            <RoundButton @click="increment"></RoundButton>
+            <BlueButton class="round" @click="increment"></BlueButton>
           </div>
           <div class="details">
             <p class="actor-name">{{ cast[index].actorsName }}</p>
@@ -94,7 +98,7 @@ const decrement = () => {
           />
         </div>
       </div>
-      <img src="../assets/img/right-cast-decor.png" alt="decor" />
+      <img class="decor" src="../assets/img/right-cast-decor.png" alt="decor" />
     </div>
   </div>
 </template>
@@ -105,6 +109,7 @@ const decrement = () => {
   height: 594px;
   display: flex;
   margin-top: 40px;
+  user-select: none;
 }
 
 .main {
@@ -122,10 +127,6 @@ const decrement = () => {
   align-items: center;
   height: 100%;
   width: 512px;
-}
-
-.reverse {
-  transform: rotateY(180deg);
 }
 
 .content-block {
@@ -191,9 +192,10 @@ const decrement = () => {
   font-size: 26px;
 }
 
+
 /* Transition */
 
-.transition-img{
+.transition-img {
   transform: rotate(calc(+90deg));
 }
 

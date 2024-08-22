@@ -47,7 +47,7 @@
 .heading-block {
   display: flex;
   flex-direction: row;
-  margin-top: 82px;
+  margin-top: 72px;
 }
 
 .heading-block img {
@@ -64,60 +64,73 @@
 }
 
 body {
-  background-color: #1e1e1e;
+  background-color: #000d1c;
   margin: 0;
   width: 100%;
 }
 
+/* Buttons (round, square, reverse) */
+
+.reverse {
+  transform: rotateY(180deg);
+}
+
+.round{
+  border-radius: 50%;
+}
+
+/* .square {
+  border-radius: 0;
+} */
+
 /* TABS */
 
-.tabs-component-tabs{
-    padding: 0;
-    list-style-type: none;
-    display: flex;
-    gap: 16px;
+.tabs-component-tabs {
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  gap: 16px;
 }
 
-.tabs-component-tab-a{
-    text-decoration: none;
-    color: #9CA3AF;
-    font-family: futura-medium;
-    font-size: 20px;
-    padding: 12px 24px;
+.tabs-component-tab-a {
+  text-decoration: none;
+  color: #9ca3af;
+  font-family: futura-medium;
+  font-size: 20px;
+  padding: 12px 24px;
 }
 
-.tabs-component-tab-a:hover{
-    background-color: #101f49;
-    color: #C3DDFD;
+.tabs-component-tab-a:hover {
+  background-color: #101f49;
+  color: #c3ddfd;
 }
 
-.tabs-component-tab-a:active{
+.tabs-component-tab-a:active {
   background-color: #1c64f2;
   color: #fff;
 }
 
-.tabs-component-tab .is-active{
-    text-transform: uppercase;
-    color: #3F83F8;
-    border-bottom: 2px solid #1C64F2;
-    background-color: #0D1422;
+.tabs-component-tab .is-active {
+  text-transform: uppercase;
+  color: #3f83f8;
+  border-bottom: 2px solid #1c64f2;
+  background-color: #0d1422;
 }
 
-.tabs-component-tab .is-active:hover{
-    background-color: #101f49;
-    color: #c3ddfd;
-    border-bottom: 2px solid #3f83f8;
-    
+.tabs-component-tab .is-active:hover {
+  background-color: #101f49;
+  color: #c3ddfd;
+  border-bottom: 2px solid #3f83f8;
 }
 
-.tabs-component-tab .is-active:active{
+.tabs-component-tab .is-active:active {
   background-color: #1c64f2;
   border-bottom: 2px solid #c3ddfd;
   color: #fff;
 }
 
-.tabs-component-panels{
-    width: 100%;
-    height: 805px;
-    margin-top: 38px;
+.tabs-component-panels {
+  width: 100%;
+  height: 805px;
+  margin-top: 38px;
 }

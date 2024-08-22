@@ -23,7 +23,6 @@
 .btn {
   width: 56px;
   height: 56px;
-  border-radius: 50%;
   background-color: #3f83f8;
   display: flex;
   justify-content: center;

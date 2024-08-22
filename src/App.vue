@@ -5,7 +5,7 @@
       <h2><a href="#header">Футурама фан</a></h2>
     </div>
     <nav class="navigation">
-      <a href="#introduction">Персонажі</a>
+      <a href="#introduction">Персонажi</a>
       <a href="#">Трейлери</a>
       <a href="#gallery">Галерея</a>
       <a href="#cast">Актори</a>
@@ -33,6 +33,7 @@
     <Introduction id="introduction"></Introduction>
     <Gallery id="gallery"></Gallery>
     <Cast id="cast"></Cast>
+    <Films id="films"></Films>
     <Footer></Footer>
   </main>
 </template>
@@ -43,6 +44,7 @@ import Introduction from "./views/Introduction.vue";
 import Gallery from "./views/Gallery.vue"
 import Cast from "./views/Cast.vue";
 import Footer from "./views/Footer.vue";
+import Films from "./views/Films.vue";
 
 export default {
   name: "App",
@@ -51,7 +53,8 @@ export default {
     Introduction,
     Gallery,
     Cast,
-    Footer
+    Footer,
+    Films
   },
 };
 </script>
