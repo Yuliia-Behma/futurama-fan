@@ -2,7 +2,6 @@
 import BlueButton from "@/components/BlueButton.vue";
 import data from "@/assets/data/cast.json";
 import { onMounted, ref } from "vue";
-// import { ref } from "vue";
 
 const cast = data.cast;
 const index = ref(0);

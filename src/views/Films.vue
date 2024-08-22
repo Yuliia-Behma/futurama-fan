@@ -1,5 +1,28 @@
 <script setup>
 import BlueButton from "@/components/BlueButton.vue";
+import data from "@/assets/data/films.json";
+import { ref } from "vue";
+
+const filmsArr = data.films;
+const index = ref(0);
+// const isDisabled = ref(false);
+
+
+const decrement = () => {
+    if (index.value > 0) {
+        index.value--;
+  } else {
+        index.value = filmsArr.length - 1;
+  }
+}
+
+const increment = () => {
+    if (index.value < filmsArr.length - 1) {
+        index.value++;
+  } else {
+        index.value = 0;
+  }
+}
 </script>
 
 <template>
@@ -15,8 +38,8 @@ import BlueButton from "@/components/BlueButton.vue";
         <h2>Серiї фiльми</h2>
       </div>
       <div class="heading-item buttons">
-        <BlueButton class="reverse"></BlueButton>
-        <BlueButton></BlueButton>
+        <BlueButton class="reverse" @click="decrement"></BlueButton>
+        <BlueButton @click="increment"></BlueButton>
       </div>
     </div>
     <div class="carrousel">
@@ -29,13 +52,9 @@ import BlueButton from "@/components/BlueButton.vue";
       class="describe-augmented-block"
       data-augmented-ui="br-2-clip-x bl-clip border"
     >
-      <h4 class="title">TEST</h4>
+      <h4 class="title">{{ filmsArr[index].title }}</h4>
       <p class="info">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        autem tempora maxime minus perspiciatis blanditiis temporibus a adipisci
-        illum aut, quibusdam voluptates cupiditate, quae sit officia eaque at
-        dolorum. Iste molestiae voluptatum illo cupiditate quas dolore fugit
-        explicabo aut at.
+        {{ filmsArr[index].info }}
       </p>
       <a class="watch-link" href="#"
         >Дивитись
@@ -148,6 +167,7 @@ import BlueButton from "@/components/BlueButton.vue";
   line-height: 150%;
   letter-spacing: 0.04em;
   color: #d1d5db;
+  margin: 0;
 }
 
 .watch-link {
