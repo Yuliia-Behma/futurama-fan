@@ -35,7 +35,7 @@ const increment = () => {
     <div class="heading-block heading-with-btns">
       <div class="heading-item">
         <img src="../assets/img/icons3D/laptop-icon-1.svg" alt="icon" />
-        <h2>Серiї фiльми</h2>
+        <h2>Серi<span class="special-font">ї</span> фiльми</h2>
       </div>
       <div class="heading-item buttons">
         <BlueButton class="reverse" @click="decrement"></BlueButton>
@@ -43,10 +43,18 @@ const increment = () => {
       </div>
     </div>
     <div class="carrousel">
-      <div class="carrousel-item first" data-augmented-ui="r-clip-y bl-clip" ></div>
-      <div class="carrousel-item second" data-augmented-ui="tl-clip-y tr-clip-y br-clip-y bl-clip-y"></div>
-      <div class="carrousel-item third" data-augmented-ui="tr-clip-y br-clip-y l-clip-y"></div>
-      <div class="carrousel-item fourth" data-augmented-ui="br-clip l-clip-y"></div>
+      <div class="carrousel-item first" data-augmented-ui="r-clip-y bl-clip" >
+        <div class="poster"><img src="../assets/img/Films/Movie-1.jpg" alt="movie 1"></div>
+      </div>
+      <div class="carrousel-item second" data-augmented-ui="tl-clip-y tr-clip-y br-clip-y bl-clip-y">
+        <div class="poster"><img src="../assets/img/Films/Movie-2.jpg" alt="movie 2"></div>
+      </div>
+      <div class="carrousel-item third" data-augmented-ui="tr-clip-y br-clip-y l-clip-y">
+        <div class="poster"><img src="../assets/img/Films/Movie-3.jpg" alt="movie 3"></div>
+      </div>
+      <div class="carrousel-item fourth" data-augmented-ui="br-clip l-clip-y">
+        <div class="poster"><img src="../assets/img/Films/Movie-4.jpg" alt="movie 4"></div>
+      </div>
     </div>
     <div
       class="describe-augmented-block"
@@ -76,6 +84,10 @@ const increment = () => {
 </template>
 
 <style scoped>
+.special-font{
+    font-family: futura-medium;
+}
+
 .heading-with-btns {
   justify-content: space-between;
 }
@@ -132,6 +144,21 @@ const increment = () => {
     --aug-l1: 8px;
     --aug-l-extend1: 30px;
     --aug-br1: 16px;
+}
+
+.poster{
+    width: 232px;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 8px 0;
+    margin: 0 auto;
+}
+
+.poster img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.64;
 }
 
 .describe-augmented-block {

@@ -256,7 +256,7 @@
   justify-content: center;
   align-items: center;
   background-color: #0c1b43bf;
-  padding: 32px 0;
+  padding: 32px 0 48px;
 }
 
 .logo-container a {
