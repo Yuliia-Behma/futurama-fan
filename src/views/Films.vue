@@ -116,33 +116,33 @@ const increment = () => {
 
 .first{
     --aug-bl: 16px;
-    --aug-r-extend1: 30px;
-    --aug-r1: 8px;
+    --aug-r-extend1: 32px;
+    --aug-r1: 4px;
 }
 
 .second{
-    --aug-tl1: 8px;
-    --aug-bl1: 8px;
-    --aug-tl-inset2: 157px;
-    --aug-bl-inset1: 157px;
-    --aug-tr-inset1: 157px;
-    --aug-br-inset2: 157px;
-    --aug-tr1: 8px;
-    --aug-br1: 8px;
+    --aug-tl1: 3px;
+    --aug-bl1: 3px;
+    --aug-tl-inset2: 160px;
+    --aug-bl-inset1: 160px;
+    --aug-tr-inset1: 160px;
+    --aug-br-inset2: 160px;
+    --aug-tr1: 3px;
+    --aug-br1: 3px;
 }
 
 .third{
-    --aug-l1: 8px;
-    --aug-l-extend1: 30px;
-    --aug-tr-inset1: 157px;
-    --aug-br-inset2: 157px;
-    --aug-tr1: 8px;
-    --aug-br1: 8px;
+    --aug-l1: 4px;
+    --aug-l-extend1: 32px;
+    --aug-tr-inset1: 160px;
+    --aug-br-inset2: 160px;
+    --aug-tr1: 3px;
+    --aug-br1: 3px;
 }
 
 .fourth{
-    --aug-l1: 8px;
-    --aug-l-extend1: 30px;
+    --aug-l1: 4px;
+    --aug-l-extend1: 32px;
     --aug-br1: 16px;
 }
 
