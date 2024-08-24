@@ -34,6 +34,12 @@ const increment = () => {
 const checkActiveItem = () => {
     filmsArr.forEach((film) => (activeIndex.value === film.id) ? film.isActive = true : film.isActive = false)
 }
+
+const clickEvent = (e) => {
+    console.log(e);
+    activeIndex.value = +e.target.name;
+    checkActiveItem();
+}
 </script>
 
 <template>
@@ -55,16 +61,16 @@ const checkActiveItem = () => {
     </div>
     <div class="carrousel">
       <div class="carrousel-item first" :class="{'active-carrousel-item': filmsArr[0].isActive === true}" data-augmented-ui="r-clip-y bl-clip" >
-        <div class="poster"><img src="../assets/img/Films/Movie-1.jpg" alt="movie 1"></div>
+        <div class="poster"><img name="0" @click="clickEvent" src="../assets/img/Films/Movie-1.jpg" alt="movie 1"></div>
       </div>
       <div class="carrousel-item second" :class="{'active-carrousel-item': filmsArr[1].isActive === true}" data-augmented-ui="tl-clip-y tr-clip-y br-clip-y bl-clip-y">
-        <div class="poster"><img src="../assets/img/Films/Movie-2.jpg" alt="movie 2"></div>
+        <div class="poster"><img name="1" @click="clickEvent" src="../assets/img/Films/Movie-2.jpg" alt="movie 2"></div>
       </div>
       <div class="carrousel-item third" :class="{'active-carrousel-item': filmsArr[2].isActive === true}" data-augmented-ui="tr-clip-y br-clip-y l-clip-y">
-        <div class="poster"><img src="../assets/img/Films/Movie-3.jpg" alt="movie 3"></div>
+        <div class="poster"><img name="2" @click="clickEvent" src="../assets/img/Films/Movie-3.jpg" alt="movie 3"></div>
       </div>
       <div class="carrousel-item fourth" :class="{'active-carrousel-item': filmsArr[3].isActive === true}" data-augmented-ui="br-clip l-clip-y">
-        <div class="poster"><img src="../assets/img/Films/Movie-4.jpg" alt="movie 4"></div>
+        <div class="poster"><img name="3" @click="clickEvent" src="../assets/img/Films/Movie-4.jpg" alt="movie 4"></div>
       </div>
     </div>
     <div
