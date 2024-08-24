@@ -1,27 +1,38 @@
 <script setup>
 import BlueButton from "@/components/BlueButton.vue";
 import data from "@/assets/data/films.json";
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 
 const filmsArr = data.films;
-const index = ref(0);
+const activeIndex = ref(0);
 // const isDisabled = ref(false);
 
+onMounted(() => {
+    checkActiveItem();
+})
 
 const decrement = () => {
-    if (index.value > 0) {
-        index.value--;
+    if (activeIndex.value > 0) {
+        activeIndex.value--;
+        checkActiveItem();
   } else {
-        index.value = filmsArr.length - 1;
+        activeIndex.value = filmsArr.length - 1;
+        checkActiveItem();
   }
 }
 
 const increment = () => {
-    if (index.value < filmsArr.length - 1) {
-        index.value++;
+    if (activeIndex.value < filmsArr.length - 1) {
+        activeIndex.value++;
+        checkActiveItem();
   } else {
-        index.value = 0;
+        activeIndex.value = 0;
+        checkActiveItem();
   }
+}
+
+const checkActiveItem = () => {
+    filmsArr.forEach((film) => (activeIndex.value === film.id) ? film.isActive = true : film.isActive = false)
 }
 </script>
 
@@ -43,16 +54,16 @@ const increment = () => {
       </div>
     </div>
     <div class="carrousel">
-      <div class="carrousel-item first" data-augmented-ui="r-clip-y bl-clip" >
+      <div class="carrousel-item first" :class="{'active-carrousel-item': filmsArr[0].isActive === true}" data-augmented-ui="r-clip-y bl-clip" >
         <div class="poster"><img src="../assets/img/Films/Movie-1.jpg" alt="movie 1"></div>
       </div>
-      <div class="carrousel-item second" data-augmented-ui="tl-clip-y tr-clip-y br-clip-y bl-clip-y">
+      <div class="carrousel-item second" :class="{'active-carrousel-item': filmsArr[1].isActive === true}" data-augmented-ui="tl-clip-y tr-clip-y br-clip-y bl-clip-y">
         <div class="poster"><img src="../assets/img/Films/Movie-2.jpg" alt="movie 2"></div>
       </div>
-      <div class="carrousel-item third" data-augmented-ui="tr-clip-y br-clip-y l-clip-y">
+      <div class="carrousel-item third" :class="{'active-carrousel-item': filmsArr[2].isActive === true}" data-augmented-ui="tr-clip-y br-clip-y l-clip-y">
         <div class="poster"><img src="../assets/img/Films/Movie-3.jpg" alt="movie 3"></div>
       </div>
-      <div class="carrousel-item fourth" data-augmented-ui="br-clip l-clip-y">
+      <div class="carrousel-item fourth" :class="{'active-carrousel-item': filmsArr[3].isActive === true}" data-augmented-ui="br-clip l-clip-y">
         <div class="poster"><img src="../assets/img/Films/Movie-4.jpg" alt="movie 4"></div>
       </div>
     </div>
@@ -60,9 +71,9 @@ const increment = () => {
       class="describe-augmented-block"
       data-augmented-ui="br-2-clip-x bl-clip border"
     >
-      <h4 class="title">{{ filmsArr[index].title }}</h4>
+      <h4 class="title">{{ filmsArr[activeIndex].title }}</h4>
       <p class="info">
-        {{ filmsArr[index].info }}
+        {{ filmsArr[activeIndex].info }}
       </p>
       <a class="watch-link" href="#"
         >Дивитись
@@ -161,13 +172,21 @@ const increment = () => {
     opacity: 0.64;
 }
 
+.active-carrousel-item{
+    background-color: #1A56DB;
+}
+
+.active-carrousel-item>div>img{
+    opacity: 1;
+}
+
 .describe-augmented-block {
   width: 100%;
-  height: 264px;
+  height: 314px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding: 24px 16px 40px;
 
   --aug-border-all: 2px;
@@ -183,7 +202,7 @@ const increment = () => {
   font-size: 30px;
   font-weight: 700;
   color: #e3a008;
-  margin: 0;
+  margin: 0 0 16px;
   line-height: 125%;
 }
 
@@ -194,7 +213,7 @@ const increment = () => {
   line-height: 150%;
   letter-spacing: 0.04em;
   color: #d1d5db;
-  margin: 0;
+  margin: 0 0 16px;
 }
 
 .watch-link {
@@ -208,6 +227,7 @@ const increment = () => {
   display: flex;
   align-items: center;
   text-decoration-skip-ink: none;
+  margin-top:auto;
 }
 
 .watch-link:hover {
