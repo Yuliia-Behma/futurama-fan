@@ -52,6 +52,21 @@ const checkActiveItem = () => {
 const clickEvent = (e) => {
     console.log(e);
     activeIndex.value = +e.target.name;
+    switch (e.target.name) {
+        case "0":
+            isLeftDisabled.value = true;
+            isRightDisabled.value = false;
+            break;
+        case "1":
+        case "2":
+            isLeftDisabled.value = false;
+            isRightDisabled.value = false;
+            break;
+        case "3":
+            isLeftDisabled.value = false;
+            isRightDisabled.value = true;
+            break;
+    }
     checkActiveItem();
 }
 </script>
