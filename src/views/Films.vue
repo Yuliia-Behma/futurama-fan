@@ -5,7 +5,8 @@ import { onMounted, ref } from "vue";
 
 const filmsArr = data.films;
 const activeIndex = ref(0);
-// const isDisabled = ref(false);
+const isLeftDisabled = ref(true);
+const isRightDisabled = ref(false)
 
 onMounted(() => {
     checkActiveItem();
@@ -13,22 +14,35 @@ onMounted(() => {
 
 const decrement = () => {
     if (activeIndex.value > 0) {
+        if (isRightDisabled.value === true) {
+            isRightDisabled.value = false;
+        }
+
         activeIndex.value--;
+
+        if (activeIndex.value == 0) {
+            isLeftDisabled.value = true;
+        }
         checkActiveItem();
-  } else {
-        activeIndex.value = filmsArr.length - 1;
+    } else {
+        isLeftDisabled.value = true;
         checkActiveItem();
   }
 }
 
 const increment = () => {
     if (activeIndex.value < filmsArr.length - 1) {
+        if (isLeftDisabled.value === true) {
+            isLeftDisabled.value = false;
+        }
+
         activeIndex.value++;
+
+        if (activeIndex.value === filmsArr.length - 1) {
+            isRightDisabled.value = true;
+        } 
         checkActiveItem();
-  } else {
-        activeIndex.value = 0;
-        checkActiveItem();
-  }
+    }
 }
 
 const checkActiveItem = () => {
@@ -55,8 +69,8 @@ const clickEvent = (e) => {
         <h2>Серi<span class="special-font">ї</span> фiльми</h2>
       </div>
       <div class="heading-item buttons">
-        <BlueButton class="reverse" @click="decrement"></BlueButton>
-        <BlueButton @click="increment"></BlueButton>
+        <BlueButton :disabled="isLeftDisabled" class="blueBtn reverse" @click="decrement"></BlueButton>
+        <BlueButton :disabled="isRightDisabled" class="blueBtn" @click="increment"></BlueButton>
       </div>
     </div>
     <div class="carrousel">
@@ -123,6 +137,7 @@ const clickEvent = (e) => {
   height: 360px;
   display: flex;
   justify-content: space-between;
+  user-select: none;
 }
 
 .carrousel-item{

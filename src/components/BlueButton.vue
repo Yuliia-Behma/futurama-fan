@@ -38,7 +38,7 @@
   color: white;
 }
 
-.btn[disabled] {
+.btn[disabled = true] {
   border: 1px solid #1e429f;
   color: #1e429f;
   background-color: #111928;
