@@ -84,8 +84,8 @@ const clickEvent = (e) => {
         <h2>Серi<span class="special-font">ї</span> фiльми</h2>
       </div>
       <div class="heading-item buttons">
-        <BlueButton :disabled="isLeftDisabled" class="blueBtn reverse" @click="decrement"></BlueButton>
-        <BlueButton :disabled="isRightDisabled" class="blueBtn" @click="increment"></BlueButton>
+        <BlueButton :disabled="isLeftDisabled" class="reverse" @click="decrement"></BlueButton>
+        <BlueButton :disabled="isRightDisabled" @click="increment"></BlueButton>
       </div>
     </div>
     <div class="carrousel">
@@ -110,7 +110,7 @@ const clickEvent = (e) => {
       <p class="info">
         {{ filmsArr[activeIndex].info }}
       </p>
-      <a class="watch-link" href="#"
+      <a class="watch-link" target="_blank" :href="filmsArr[activeIndex].link"
         >Дивитись
         <svg
           width="20"
