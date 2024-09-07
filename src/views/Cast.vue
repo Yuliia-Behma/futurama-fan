@@ -7,18 +7,24 @@ const cast = data.cast;
 const index = ref(0);
 const fontColor = ref("");
 const border = ref(null);
+const photo = ref(null);
 const rotateAngle = ref(0)
 
 const characterNameParag = ref(null);
+
+onMounted(() => {
+  refreshColor();
+});
 
 const refreshColor = () => {
   fontColor.value = cast[index.value].fontColor;
   characterNameParag.value.style.color = fontColor.value;
 };
 
-onMounted(() => {
-  refreshColor();
-});
+const addingClassAppearance = () => {
+  photo.value.classList.add("appearance")
+  setTimeout(()=>{photo.value.classList.remove("appearance")}, 1000)
+}
 
 const rightBorderAnimation = () => {   
   rotateAngle.value += 72;
@@ -26,6 +32,7 @@ const rightBorderAnimation = () => {
     "--rotateAngle",
     rotateAngle.value + "deg"
   )
+  addingClassAppearance();
 }
 
 const leftBorderAnimation = () => {
@@ -34,6 +41,7 @@ const leftBorderAnimation = () => {
     "--rotateAngle",
     rotateAngle.value + "deg"
   )
+  addingClassAppearance();
 }
 
 const increment = () => {
@@ -84,7 +92,7 @@ const decrement = () => {
                 <img
                   ref="border"
                   class="transition-img rotate"
-                  src="../assets/img/cast-big-frame.svg"
+                  src="../assets/img/border.svg"
                   alt="frame"
                 />
               <div class="photo">
@@ -92,7 +100,7 @@ const decrement = () => {
                   :src="
                     require(`../assets/img/Actors/${cast[index].actorsPhoto}`)
                   "
-                  alt="actor's photo"
+                  alt="actor's photo" ref="photo"
                 />
               </div>
             </div>
@@ -160,19 +168,18 @@ const decrement = () => {
 
 .photo {
   position: absolute;
-  top: 33px;
-  left: 33px;
+  top: 49px;
+  left: 49px;
   box-sizing: border-box;
   border-radius: 50%;
-  border: 6px solid #fdba8c;
-  width: 254px;
-  height: 254px;
+  border: 4px solid #fdba8c;
+  width: 222px;
+  height: 222px;
   padding: 10px;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #fff;
 }
 
 .photo img {
@@ -211,5 +218,9 @@ const decrement = () => {
 .rotate{
   transform: rotate(var(--rotateAngle));
   transition: all 0.5s ease-in-out;
+}
+
+.appearance{
+  animation: appearance 0.7s;
 }
 </style>
