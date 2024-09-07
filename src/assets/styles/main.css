@@ -18,6 +18,10 @@
   src: url("~@/assets/fonts/Montserrat-Regular.ttf");
 }
 
+:root{
+  --rotateAngle: 0deg;
+}
+
 .first-wraper {
   max-width: 1128px;
   margin: 0 auto;

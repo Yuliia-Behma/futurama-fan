@@ -34,30 +34,6 @@
         <a href="#gallery">Галерея</a>
         <a href="#cast">Актори</a>
         <a href="">Сезони</a>
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M20 10.6667C20 15.4532 15.9706 19.3333 11 19.3333C6.02943 19.3333 2 15.4532 2 10.6667C2 5.8802 6.02943 2 11 2C15.9706 2 20 5.8802 20 10.6667Z"
-            fill="#111928"
-          />
-          <path
-            d="M17.3334 17.3335L22 22.0002"
-            stroke="currentColor"
-            stroke-width="3"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          />
-          <path
-            d="M18.5 10.6667C18.5 14.5719 15.196 17.8333 11 17.8333C6.804 17.8333 3.5 14.5719 3.5 10.6667C3.5 6.76148 6.804 3.5 11 3.5C15.196 3.5 18.5 6.76148 18.5 10.6667Z"
-            stroke="currentColor"
-            stroke-width="3"
-          />
-        </svg>
       </nav>
       <div class="decor">
         <svg
@@ -388,6 +364,7 @@
 
 .social-links a svg:active{
   color: #fff;
+  transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 #youTubeLink{

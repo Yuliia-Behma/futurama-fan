@@ -6,7 +6,8 @@ import { onMounted, ref } from "vue";
 const cast = data.cast;
 const index = ref(0);
 const fontColor = ref("");
-// const isDisabled = ref(false);
+const border = ref(null);
+const rotateAngle = ref(0)
 
 const characterNameParag = ref(null);
 
@@ -19,7 +20,24 @@ onMounted(() => {
   refreshColor();
 });
 
+const rightBorderAnimation = () => {   
+  rotateAngle.value += 72;
+  document.documentElement.style.setProperty(
+    "--rotateAngle",
+    rotateAngle.value + "deg"
+  )
+}
+
+const leftBorderAnimation = () => {
+  rotateAngle.value -= 72;
+  document.documentElement.style.setProperty(
+    "--rotateAngle",
+    rotateAngle.value + "deg"
+  )
+}
+
 const increment = () => {
+  rightBorderAnimation();
   if (index.value < cast.length - 1) {
     index.value++;
     refreshColor();
@@ -32,6 +50,7 @@ const increment = () => {
 };
 
 const decrement = () => {
+  leftBorderAnimation();
   if (index.value > 0) {
     index.value--;
     refreshColor();
@@ -62,14 +81,12 @@ const decrement = () => {
           <div class="content-block">
             <BlueButton class="round reverse" @click="decrement"></BlueButton>
             <div class="actor">
-              <Transition>
                 <img
-                  class="transition-img"
+                  ref="border"
+                  class="transition-img rotate"
                   src="../assets/img/cast-big-frame.svg"
                   alt="frame"
                 />
-              </Transition>
-
               <div class="photo">
                 <img
                   :src="
@@ -191,20 +208,8 @@ const decrement = () => {
   font-size: 26px;
 }
 
-
-/* Transition */
-
-.transition-img {
-  transform: rotate(calc(+90deg));
-}
-
-.v-enter-active,
-.v-leave-active {
-  transition: transform 0.5s ease;
-}
-
-.v-enter-from,
-.v-leave-to {
-  transform: rotate(calc(+30deg));
+.rotate{
+  transform: rotate(var(--rotateAngle));
+  transition: all 0.5s ease-in-out;
 }
 </style>
