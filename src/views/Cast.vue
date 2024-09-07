@@ -6,11 +6,14 @@ import { onMounted, ref } from "vue";
 const cast = data.cast;
 const index = ref(0);
 const fontColor = ref("");
+
 const border = ref(null);
 const photo = ref(null);
-const rotateAngle = ref(0)
-
+const actorNameParag = ref(null);
 const characterNameParag = ref(null);
+const characterImg = ref(null);
+
+const rotateAngle = ref(0);
 
 onMounted(() => {
   refreshColor();
@@ -22,8 +25,29 @@ const refreshColor = () => {
 };
 
 const addingClassAppearance = () => {
-  photo.value.classList.add("appearance")
-  setTimeout(()=>{photo.value.classList.remove("appearance")}, 1000)
+  photo.value.classList.add("appearance");
+  actorNameParag.value.classList.add("appearance");
+  characterNameParag.value.classList.add("appearance");
+  characterImg.value.classList.add("appearance");
+  setTimeout(() => {
+    photo.value.classList.remove("appearance");
+    actorNameParag.value.classList.remove("appearance");
+    characterNameParag.value.classList.remove("appearance");
+    characterImg.value.classList.remove("appearance");
+  }, 500)
+}
+
+const addingClassDisappearance = () => {
+  photo.value.classList.add("disappearance");
+  actorNameParag.value.classList.add("disappearance");
+  characterNameParag.value.classList.add("disappearance");
+  characterImg.value.classList.add("disappearance");
+  setTimeout(() => {
+    photo.value.classList.remove("disappearance");
+    actorNameParag.value.classList.remove("disappearance");
+    characterNameParag.value.classList.remove("disappearance");
+    characterImg.value.classList.remove("disappearance");
+  }, 500)
 }
 
 const rightBorderAnimation = () => {   
@@ -32,7 +56,7 @@ const rightBorderAnimation = () => {
     "--rotateAngle",
     rotateAngle.value + "deg"
   )
-  addingClassAppearance();
+  addingClassDisappearance();
 }
 
 const leftBorderAnimation = () => {
@@ -41,12 +65,13 @@ const leftBorderAnimation = () => {
     "--rotateAngle",
     rotateAngle.value + "deg"
   )
-  addingClassAppearance();
+  addingClassDisappearance();
 }
 
 const increment = () => {
   rightBorderAnimation();
-  if (index.value < cast.length - 1) {
+  setTimeout(() => {
+    if (index.value < cast.length - 1) {
     index.value++;
     refreshColor();
     console.log(fontColor.value);
@@ -54,12 +79,16 @@ const increment = () => {
     index.value = 0;
     refreshColor();
     console.log(fontColor.value);
-  }
+    }
+  addingClassAppearance();
+  }, 500)
+  
 };
 
 const decrement = () => {
   leftBorderAnimation();
-  if (index.value > 0) {
+  setTimeout(() => {
+    if (index.value > 0) {
     index.value--;
     refreshColor();
     console.log(fontColor.value);
@@ -67,7 +96,10 @@ const decrement = () => {
     index.value = cast.length - 1;
     refreshColor();
     console.log(fontColor.value);
-  }
+    }
+    addingClassAppearance();
+  }, 500)
+  
 };
 </script>
 
@@ -107,14 +139,14 @@ const decrement = () => {
             <BlueButton class="round" @click="increment"></BlueButton>
           </div>
           <div class="details">
-            <p class="actor-name">{{ cast[index].actorsName }}</p>
+            <p ref="actorNameParag" class="actor-name">{{ cast[index].actorsName }}</p>
             <p ref="characterNameParag" class="characters-name">
               {{ cast[index].charactersName }}
             </p>
           </div>
         </div>
         <div class="characters-img">
-          <img
+          <img ref="characterImg"
             :src="
               require(`../assets/img/Characters/${cast[index].charactersImg}`)
             "
@@ -217,10 +249,14 @@ const decrement = () => {
 
 .rotate{
   transform: rotate(var(--rotateAngle));
-  transition: all 0.5s ease-in-out;
+  transition: all 1s ease-in-out;
 }
 
 .appearance{
-  animation: appearance 0.7s;
+  animation: appearance 0.5s;
+}
+
+.disappearance{
+  animation: disappearance 0.5s;
 }
 </style>
