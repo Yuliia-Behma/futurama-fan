@@ -51,7 +51,7 @@
 .heading-block {
   display: flex;
   flex-direction: row;
-  margin-top: 72px;
+  padding-top: 104px;
 }
 
 .heading-block img {
@@ -139,15 +139,7 @@ body {
 /* KEY FRAMES */
 
 @keyframes appearance {
-  /* 0%{
-    opacity: 1;
-  }
-  50%{
-    opacity: 0;
-  }
-  100%{
-    opacity: 1;
-  } */
+
   from{
     opacity: 0;
   }
